@@ -59,7 +59,7 @@
   (defun sjis-keyword ()
     #+clisp 'charset:shift-jis
     #+sbcl :sjis
-    #+ccl :cp932)
+    #-(or clisp sbcl) :cp932)
   (defun utf8-keyword ()
     #+clisp 'charset:utf-8
     #-clisp :utf-8)
