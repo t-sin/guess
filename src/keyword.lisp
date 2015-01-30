@@ -43,6 +43,19 @@
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (defun enc-name->keyword (enc)
     (funcall (symbol-function (find-symbol (string-upcase (format nil "~A-keyword" (symbol-name enc))) :guess))))
+
+;;;; linebreak
+(defun lf-keyword ()
+  #+ccl :unix
+  #-ccl :lf)
+
+(defun cr-keyword ()
+  #+ccl :macox
+  #-ccl :cr)
+
+(defun crlf-keyword ()
+  #+ccl :dos
+  #-ccl :crlf)
   
 ;;;; japanese (:jp)
   (defun iso-2022-jp-keyword () ;; jis
