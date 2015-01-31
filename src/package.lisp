@@ -40,7 +40,7 @@
 (in-package :cl-user)
 (defpackage :guess 
   (:use :cl :anaphora) 
-  (:export #:ces-guess-from-vector #:guess-line-break-from-vector)
+  (:export #:ces-guess-from-vector #:lb-guess-from-vector)
   (:import-from :alexandria :with-gensyms))
 
 (in-package :guess)

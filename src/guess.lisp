@@ -113,7 +113,7 @@
 
 ;;;; export function
 
-(defun guess-line-break-from-vector (buffer &aux (len (length buffer)))
+(defun lb-guess-from-vector (buffer &aux (len (length buffer)))
   (loop for i of-type fixnum from 0 below len do
        (if (eq (aref buffer (the fixnum i)) (char-code #\Return))
            (if (and (< (1+ (the fixnum i)) len)
